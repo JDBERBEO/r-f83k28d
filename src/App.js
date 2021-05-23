@@ -1,15 +1,27 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import './App.css';
 
-class App extends Component {
-  render() {
+function App() {
+
+    let [count, setCount] = useState(0)
+    
+
+    
+    const handleOnClic = (e) => {
+      //e.preventDefault()
+      // console.log('hola')
+      count++
+      setCount(count)
+      console.log(count)
+    }
+
     return (
+      
       <div>
-        <span className="value">0</span>
-        <button id="inc">Incrementa</button>
+        <span className="value">{count}</span>
+        <button id="inc" onClick={handleOnClic}>Incrementa</button>
       </div>
     );
-  }
 }
 
 export default App;
